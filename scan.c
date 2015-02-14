@@ -4,7 +4,8 @@
 main ()
 {
 	int tok;
-	extern char yytext[];
+	extern char *yytext;
+	/* extern char yytext[]; need this for lex on admiral */
 
 	while ((tok = yylex()) != 0) {
 		printf ("%d\t%s\n", tok, yytext);
